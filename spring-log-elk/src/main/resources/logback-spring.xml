@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <included resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashAccessTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <encoder>
+            <provider>
+                <mdc/>
+                <context/>
+                <logLevel/>
+                <pattern>
+                    {
+                    "app": "test_log",
+                    "timestamp": "%date{ISO8601}",
+                    "level": "%level",
+                    "message": "%message",
+                    "logger": "%logger",
+                    "thread": "%thread",
+                    "stack_trace": "%ex{full}"
+                    }
+                </pattern>
+                <threadName/>
+                <message/>
+                <logstashMarkers/>
+                <stackTrace/>
+            </provider>
+        </encoder>
+    </appender>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="logstash"/>
+        <appender-ref ref="Console"/>
+    </root>
+
+    <logger name="com.company.springlogelk" level="info" additivity="false">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="logstash"/>
+    </logger>
+
+</configuration>
