@@ -10,6 +10,7 @@ services:
       - "ES_JAVA_OPTS=-Xms512m"
       - "discovery.type=single-node"
       - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=true
     ports:
       - "9200:9200"
     volumes:

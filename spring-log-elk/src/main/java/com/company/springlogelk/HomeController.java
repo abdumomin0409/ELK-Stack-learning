@@ -24,5 +24,23 @@ public class HomeController {
         return "Welcome to logs page ";
     }
 
+    @GetMapping("/er")
+    public String error() {
+        LocalDateTime now = LocalDateTime.now();
+        log.error("Welcome error page at {}", now);
+        return "Welcome to error page ";
+    }
+    @GetMapping("/warm")
+    public String warm() {
+        LocalDateTime now = LocalDateTime.now();
+        log.warn("Welcome warm page at {}", now);
+        return "Welcome to warm page ";
+    }
+    @GetMapping("/trace")
+    public String trace() {
+        LocalDateTime now = LocalDateTime.now();
+        log.trace("Welcome trace page at {}", now);
+        return "Welcome to trace page ";
+    }
 
 }
