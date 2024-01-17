@@ -1,7 +1,7 @@
 ## Hello Everyone! 👋🏻
 
 <h1 align="center">
-	<img src="https://readme-typing-svg.demolab.com/?lines=Hello Everyone;Now+we+will+consider;the+integration+of+ELK+stack;with+spring+boot+application">
+	<img src="https://readme-typing-svg.demolab.com/?lines=Now+we+will+consider;the+integration+of+ELK+stack;with+spring+boot+application">
 </h1>
 
 1. Firstly, go into the ELK folder and open a terminal there. 
